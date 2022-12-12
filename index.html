@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Crop Clicker! | Idle Game</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/beanicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body id="canvas" class="daymode">
+    <div id="audios">
+    
+    </div>
+    <div id="1" class="hide">
+      <h5 id="01title">Locked</h5>
+        <hr />
+        <p id="01desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="helphandDesc" class="hide">
+      <h5>The Helping Hand</h5>
+      <hr />
+      <p>A magical hand that seems to enjoy harvesting your crops.</p>
+      <ul>
+        <li>Each hand produces <span id="prodHands"></span> crops per second</li>
+        <li>You own <span id="ownedHands"></span> Helping Hands</li>
+        <li>Your helping hands are producing <span id="handCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="farmerjoeDesc" class="hide">
+      <h5>Farmer Joe</h5>
+      <hr />
+      <p>He never actually told you his name, but he likes working on your farm.</p>
+      <ul>
+        <li>Each farmer joe produces <span id="prodJoes"></span> crops per second</li>
+        <li>You own <span id="ownedJoes"></span> farmers named Joe</li>
+        <li>Your farmer joes are producing <span id="joeCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="fieldDesc" class="hide">
+      <h5>Magical Field</h5>
+      <hr />
+      <p>After planting your special crops here, the soil gained <br />some magical quality that helps with your crop growth.</p>
+      <ul>
+        <li>Each magical field produces <span id="prodFields"></span> crops per second</li>
+        <li>You own <span id="ownedFields"></span> magical fields</li>
+        <li>Your magical fields are producing <span id="fieldCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="harvesterDesc" class="hide">
+      <h5>Combine</h5>
+      <hr />
+      <p>Much faster than harvesting by hand!</p>
+      <ul>
+        <li>Each combine produces <span id="prodHarvesters"></span> crops per second</li>
+        <li>You own <span id="ownedHarvesters"></span> combines</li>
+        <li>Your combines are producing <span id="harvesterCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="greenhouseDesc" class="hide">
+      <h5>Greenhouse</h5>
+      <hr />
+      <p>Allows you to grow crops in the strangest climates.</p>
+      <ul>
+        <li>Each greenhouse produces <span id="prodGreenhouses"></span> crops per second</li>
+        <li>You own <span id="ownedGreenhouses"></span> greenhouses</li>
+        <li>Your greenhouses are producing <span id="greenhouseCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="skyscraperDesc" class="hide">
+      <h5>Skyscraper</h5>
+      <hr />
+      <p>Each and every floor in this building is used for growing crops.</p>
+      <ul>
+        <li>Each skyscraper produces <span id="prodSkyscrapers"></span> crops per second</li>
+        <li>You own <span id="ownedSkyscrapers"></span> skyscrapers</li>
+        <li>Your skyscrapers are producing <span id="skyscraperCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="bunkerDesc" class="hide">
+      <h5>Bunker</h5>
+      <hr />
+      <p>Underground facilities that can be used for growing more crops.</p>
+      <ul>
+        <li>Each bunker produces <span id="prodBunkers"></span> crops per second</li>
+        <li>You own <span id="ownedBunkers"></span> bunkers</li>
+        <li>Your bunkers are producing <span id="bunkerCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="replicatorDesc" class="hide">
+      <h5>Replicator</h5>
+      <hr />
+      <p>Machine that can create crops from nothing!</p>
+      <ul>
+        <li>Each replicator produces <span id="prodReplicators"></span> crops per second</li>
+        <li>You own <span id="ownedReplicators"></span> replicators</li>
+        <li>Your replicators are producing <span id="replicatorCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="planetDesc" class="hide">
+      <h5>Planet</h5>
+      <hr />
+      <p>An entire planet that has rich magic soil to farm on.</p>
+      <ul>
+        <li>Each planet produces <span id="prodPlanets"></span> crops per second</li>
+        <li>You own <span id="ownedPlanets"></span> planets</li>
+        <li>Your planets are producing <span id="planetCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="transmutatorDesc" class="hide">
+      <h5>Transmutator</h5>
+      <hr />
+      <p>Harvests the energy from stars and converts it into crops.</p>
+      <ul>
+        <li>Each transmutator produces <span id="prodTransmutators"></span> crops per second</li>
+        <li>You own <span id="ownedTransmutator"></span> transmutators</li>
+        <li>Your transmutators are producing <span id="transmutatorCps"></span> crops per second</li>
+      </ul>
+    </div>
+    <div id="2" class="hide">
+      <h5 id="02title">Locked</h5>
+        <hr />
+        <p id="02desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="3" class="hide">
+      <h5 id="03title">Locked</h5>
+        <hr />
+        <p id="03desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="4" class="hide">
+      <h5 id="04title">Locked</h5>
+        <hr />
+        <p id="04desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="5" class="hide">
+      <h5 id="05title">Locked</h5>
+        <hr />
+        <p id="05desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="6" class="hide">
+      <h5 id="06title">Locked</h5>
+        <hr />
+        <p id="06desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="7" class="hide">
+      <h5 id="07title">Locked</h5>
+        <hr />
+        <p id="07desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="8" class="hide">
+      <h5 id="08title">Locked</h5>
+        <hr />
+        <p id="08desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="9" class="hide">
+      <h5 id="09title">Locked</h5>
+        <hr />
+        <p id="09desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="10" class="hide">
+      <h5 id="10title">Locked</h5>
+        <hr />
+        <p id="10desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="11" class="hide">
+      <h5 id="11title">Locked</h5>
+        <hr />
+        <p id="11desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="12" class="hide">
+      <h5 id="12title">Locked</h5>
+        <hr />
+        <p id="12desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="13" class="hide">
+      <h5 id="13title">Locked</h5>
+        <hr />
+        <p id="13desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="14" class="hide">
+      <h5 id="14title">Locked</h5>
+        <hr />
+        <p id="14desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="15" class="hide">
+      <h5 id="15title">Locked</h5>
+        <hr />
+        <p id="15desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="16" class="hide">
+      <h5 id="16title">Locked</h5>
+        <hr />
+        <p id="16desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="17" class="hide">
+      <h5 id="17title">Locked</h5>
+        <hr />
+        <p id="17desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="18" class="hide">
+      <h5 id="18title">Locked</h5>
+        <hr />
+        <p id="18desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="19" class="hide">
+      <h5 id="19title">Locked</h5>
+        <hr />
+        <p id="19desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="20" class="hide">
+      <h5 id="20title">Locked</h5>
+        <hr />
+        <p id="20desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="21" class="hide">
+      <h5 id="21title">Locked</h5>
+      <hr />
+      <p id="21desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="22" class="hide">
+      <h5 id="22title">Locked</h5>
+      <hr />
+      <p id="22desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="23" class="hide">
+      <h5 id="23title">Locked</h5>
+      <hr />
+      <p id="23desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="24" class="hide">
+      <h5 id="24title">Locked</h5>
+      <hr />
+      <p id="24desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="25" class="hide">
+      <h5 id="25title">Locked</h5>
+      <hr />
+      <p id="25desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="26" class="hide">
+      <h5 id="26title">Locked</h5>
+      <hr />
+      <p id="26desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="27" class="hide">
+      <h5 id="27title">Locked</h5>
+      <hr />
+      <p id="27desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="28" class="hide">
+      <h5 id="28title">Locked</h5>
+      <hr />
+      <p id="28desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="29" class="hide">
+      <h5 id="29title">Locked</h5>
+      <hr />
+      <p id="29desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="30" class="hide">
+      <h5 id="30title">Locked</h5>
+      <hr />
+      <p id="30desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="31" class="hide">
+      <h5 id="31title">Locked</h5>
+      <hr />
+      <p id="31desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="32" class="hide">
+      <h5 id="32title">Locked</h5>
+      <hr />
+      <p id="32desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="33" class="hide">
+      <h5 id="33title">Locked</h5>
+      <hr />
+      <p id="33desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="34" class="hide">
+      <h5 id="34title">Locked</h5>
+      <hr />
+      <p id="34desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="35" class="hide">
+      <h5 id="35title">Locked</h5>
+      <hr />
+      <p id="35desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="36" class="hide">
+      <h5 id="36title">Locked</h5>
+      <hr />
+      <p id="36desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="37" class="hide">
+      <h5 id="37title">Locked</h5>
+      <hr />
+      <p id="37desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="38" class="hide">
+      <h5 id="38title">Locked</h5>
+      <hr />
+      <p id="38desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="39" class="hide">
+      <h5 id="39title">Locked</h5>
+      <hr />
+      <p id="39desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="40" class="hide">
+      <h5 id="40title">Locked</h5>
+      <hr />
+      <p id="40desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="41" class="hide">
+      <h5 id="41title">Locked</h5>
+      <hr />
+      <p id="41desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="42" class="hide">
+      <h5 id="42title">Locked</h5>
+      <hr />
+      <p id="42desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="43" class="hide">
+      <h5 id="43title">Locked</h5>
+      <hr />
+      <p id="43desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="44" class="hide">
+      <h5 id="44title">Locked</h5>
+      <hr />
+      <p id="44desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="45" class="hide">
+      <h5 id="45title">Locked</h5>
+      <hr />
+      <p id="45desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="46" class="hide">
+      <h5 id="46title">Locked</h5>
+      <hr />
+      <p id="46desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="47" class="hide">
+      <h5 id="47title">Locked</h5>
+      <hr />
+      <p id="47desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="48" class="hide">
+      <h5 id="48title">Locked</h5>
+      <hr />
+      <p id="48desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="49" class="hide">
+      <h5 id="49title">Locked</h5>
+      <hr />
+      <p id="49desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="50" class="hide">
+      <h5 id="50title">Locked</h5>
+      <hr />
+      <p id="50desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="51" class="hide">
+      <h5 id="51title">Locked</h5>
+      <hr />
+      <p id="51desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="52" class="hide">
+      <h5 id="52title">Locked</h5>
+      <hr />
+      <p id="52desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="53" class="hide">
+      <h5 id="53title">Locked</h5>
+      <hr />
+      <p id="53desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="54" class="hide">
+      <h5 id="54title">Locked</h5>
+      <hr />
+      <p id="54desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="55" class="hide">
+      <h5 id="55title">Locked</h5>
+      <hr />
+      <p id="55desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="56" class="hide">
+      <h5 id="56title">Locked</h5>
+      <hr />
+      <p id="56desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="57" class="hide">
+      <h5 id="57title">Locked</h5>
+      <hr />
+      <p id="57desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="58" class="hide">
+      <h5 id="58title">Locked</h5>
+      <hr />
+      <p id="58desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="59" class="hide">
+      <h5 id="59title">Locked</h5>
+      <hr />
+      <p id="59desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="60" class="hide">
+      <h5 id="60title">Locked</h5>
+      <hr />
+      <p id="60desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="61" class="hide">
+      <h5 id="61title">Locked</h5>
+      <hr />
+      <p id="61desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="62" class="hide">
+      <h5 id="62title">Locked</h5>
+      <hr />
+      <p id="62desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="63" class="hide">
+      <h5 id="63title">Locked</h5>
+      <hr />
+      <p id="63desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div id="64" class="hide">
+      <h5 id="64title">Locked</h5>
+      <hr />
+      <p id="64desc">Unlock this achievement to reveal info</p>
+    </div>
+    <div class="topbarBG"></div>
+    <div class="topbar">
+      <button onclick="saveGame()" type="button">Save Game</button>
+      <p id="title">Farm those crops!</p>
+      <a href="https://twitter.com/ToastyyThomas" target="_blank" class="fa fa-twitter"></a>
+      <a href="https://www.patreon.com/toasted_thomas" target="_blank" class="fa so-patreon"><img width="20px" height="20px" src="images/patreon.png" /></a>
+      <h5 id="versionNum" class="versionNum">v 0.4.2 | </h5>
+    </div>
+    <hr class="topline" />
+    <br><br>
+    <div class="gamewindow">
+      <div id="leftbar" class="leftbar">
+        <div class="leftmenu">
+          <button class="menulink" id="defaultMenu" onclick="openMenu(event, 'Upgrades')" type="button">Upgrades</button>
+          <button class="menulink" onclick="openMenu(event, 'Achievements')" type="button">Achievements</button>
+          <button class="menulink" onclick="openMenu(event, 'Stats');updateStats()" type="button">Stats</button>
+          <button class="menulink" onclick="openMenu(event, 'Settings')" type="button">Settings</button>
+          <button class="menulink" onclick="openMenu(event, 'News')" type="button">News</button>
+        </div>
+        <div id="Upgrades" class="menucontent">
+          <div id="available" class="available">
+            <div class="availableborder"></div>
+            <div class="availablescroll">
+            <div class="availTitle"><p>Store</p></div>
+            <div id="availablehold">
+              <img id="helphandI" onclick="purchUpgrade('hand1' , 'helphandI')" class="availableUp , unavailable"  src="images/handUpI.png" />
+              <img id="helphandII" onclick="purchUpgrade('hand2', 'helphandII')" class="availableUp , unavailable" src="images/handUpII.png" />
+              <img id="helphandIII" onclick="purchUpgrade('hand3', 'helphandIII')" class="availableUp , unavailable" src="images/handUpIII.png" />
+              <img id="helphandIV" onclick="purchUpgrade('hand4', 'helphandIV')" class="availableUp , unavailable" src="images/handUpIV.png" />
+              <img id="helphandV" onclick="purchUpgrade('hand5', 'helphandV')" class="availableUp , unavailable" src="images/handUpV.png" />
+              <img id="helphandVI" onclick="purchUpgrade('hand6', 'helphandVI')" class="availableUp , unavailable" src="images/handUpVI.png" />
+              <img id="helphandVII" onclick="purchUpgrade('hand7', 'helphandVII')" class="availableUp , unavailable" src="images/handUpVII.png" />
+              <img id="helphandVIII" onclick="purchUpgrade('hand8', 'helphandVIII')" class="availableUp , unavailable" src="images/handUpVIII.png" />
+              <img id="helphandIX" onclick="purchUpgrade('hand9', 'helphandIX')" class="availableUp , unavailable" src="images/handUpIX.png" />
+              <img id="helphandX" onclick="purchUpgrade('hand10', 'helphandX')" class="availableUp , unavailable" src="images/handUpX.png" />
+              <img id="helphandXI" onclick="purchUpgrade('hand11', 'helphandXI')" class="availableUp , unavailable" src="images/handUpXI.png" />
+              <img id="clicking1" onclick="purchUpgrade('click1', 'clicking1')" class="availableUp , unavailable" src="images/clickUp1.png" />
+              <img id="clicking2" onclick="purchUpgrade('click2', 'clicking2')" class="availableUp , unavailable" src="images/clickUp2.png" />
+              <img id="clicking3" onclick="purchUpgrade('click3', 'clicking3')" class="availableUp , unavailable" src="images/clickUp3.png" />
+              <img id="clicking4" onclick="purchUpgrade('click4', 'clicking4')" class="availableUp , unavailable" src="images/clickUp4.png" />
+              <img id="clicking5" onclick="purchUpgrade('click5', 'clicking5')" class="availableUp , unavailable" src="images/clickUp5.png" />
+              <img id="farmerjoeI" onclick="purchUpgrade('joe1', 'farmerjoeI')" class="availableUp , unavailable" src="images/farmerUpI.png" />
+              <img id="farmerjoeII" onclick="purchUpgrade('joe2', 'farmerjoeII')" class="availableUp , unavailable" src="images/farmerUpII.png" />
+              <img id="farmerjoeIII" onclick="purchUpgrade('joe3', 'farmerjoeIII')" class="availableUp , unavailable" src="images/farmerUpIII.png" />
+              <img id="farmerjoeIV" onclick="purchUpgrade('joe4', 'farmerjoeIV')" class="availableUp , unavailable" src="images/farmerUpIV.png" />
+              <img id="farmerjoeV" onclick="purchUpgrade('joe5', 'farmerjoeV')" class="availableUp , unavailable" src="images/farmerUpV.png" />
+              <img id="fieldI" onclick="purchUpgrade('field1', 'fieldI')" class="availableUp , unavailable" src="images/fieldUpI.png" />
+              <img id="fieldII" onclick="purchUpgrade('field2', 'fieldII')" class="availableUp , unavailable" src="images/fieldUpII.png" />
+              <img id="fieldIII" onclick="purchUpgrade('field3', 'fieldIII')" class="availableUp , unavailable" src="images/fieldUpIII.png" />
+              <img id="fieldIV" onclick="purchUpgrade('field4', 'fieldIV')" class="availableUp , unavailable" src="images/fieldUpIV.png" />
+              <img id="fieldV" onclick="purchUpgrade('field5', 'fieldV')" class="availableUp , unavailable" src="images/fieldUpV.png" />
+              <img id="harvesterI" onclick="purchUpgrade('harvester1', 'harvesterI')" class="availableUp , unavailable" src= "images/harvesterUpI.png" />
+              <img id="harvesterII" onclick="purchUpgrade('harvester2', 'harvesterII')" class="availableUp , unavailable" src="images/harvesterUpII.png" />
+              <img id="harvesterIII" onclick="purchUpgrade('harvester3', 'harvesterIII')" class="availableUp , unavailable" src="images/harvesterUpIII.png" />
+              <img id="harvesterIV" onclick="purchUpgrade('harvester4', 'harvesterIV')" class="availableUp , unavailable" src="images/harvesterUpIV.png" />
+              <img id="harvesterV" onclick="purchUpgrade('harvester5', 'harvesterV')" class="availableUp , unavailable" src="images/harvesterUpV.png" />
+              <img id="greenhouseI" onclick="purchUpgrade('greenhouse1', 'greenhouseI')" class="availableUp , unavailable" src="images/greenhouseUpI.png" />
+              <img id="greenhouseII" onclick="purchUpgrade('greenhouse2', 'greenhouseII')" class="availableUp , unavailable" src="images/greenhouseUpII.png" />
+              <img id="greenhouseIII" onclick="purchUpgrade('greenhouse3', 'greenhouseIII')" class="availableUp , unavailable" src="images/greenhouseUpIII.png" />
+              <img id="greenhouseIV" onclick="purchUpgrade('greenhouse4', 'greenhouseIV')" class="availableUp , unavailable" src="images/greenhouseUpIV.png" />
+              <img id="greenhouseV" onclick="purchUpgrade('greenhouse5', 'greenhouseV')" class="availableUp , unavailable" src="images/greenhouseUpV.png" />
+              <img id="skyscraperI" onclick="purchUpgrade('skyscraper1', 'skyscraperI')" class="availableUp , unavailable" src="images/skyscraperUpI.png" />
+              <img id="skyscraperII" onclick="purchUpgrade('skyscraper2', 'skyscraperII')" class="availableUp , unavailable" src="images/skyscraperUpII.png" />
+              <img id="skyscraperIII" onclick="purchUpgrade('skyscraper3', 'skyscraperIII')" class="availableUp , unavailable" src="images/skyscraperUpIII.png" />
+              <img id="skyscraperIV" onclick="purchUpgrade('skyscraper4', 'skyscraperIV')" class="availableUp , unavailable" src="images/skyscraperUpIV.png" />
+              <img id="skyscraperV" onclick="purchUpgrade('skyscraper5', 'skyscraperV')" class="availableUp , unavailable" src="images/skyscraperUpV.png" />
+              <img id="bunkerI" onclick="purchUpgrade('bunker1', 'bunkerI')" class="availableUp , unavailable" src="images/bunkerUpI.png" />
+              <img id="bunkerII" onclick="purchUpgrade('bunker2', 'bunkerII')" class="availableUp , unavailable" src="images/bunkerUpII.png" />
+              <img id="bunkerIII" onclick="purchUpgrade('bunker3', 'bunkerIII')" class="availableUp , unavailable" src="images/bunkerUpIII.png" />
+              <img id="bunkerIV" onclick="purchUpgrade('bunker4', 'bunkerIV')" class="availableUp , unavailable" src="images/bunkerUpIV.png" />
+              <img id="bunkerV" onclick="purchUpgrade('bunker5', 'bunkerV')" class="availableUp , unavailable" src="images/bunkerUpV.png" />
+              <img id="replicatorI" onclick="purchUpgrade('replicator1', 'replicatorI')" class="availableUp , unavailable" src="images/replicatorUpI.png" />
+              <img id="replicatorII" onclick="purchUpgrade('replicator2', 'replicatorII')" class="availableUp , unavailable" src="images/replicatorUpII.png" />
+              <img id="replicatorIII" onclick="purchUpgrade('replicator3', 'replicatorIII')" class="availableUp , unavailable" src="images/replicatorUpIII.png" />
+              <img id="replicatorIV" onclick="purchUpgrade('replicator4', 'replicatorIV')" class="availableUp , unavailable" src="images/replicatorUpIV.png" />
+              <img id="replicatorV" onclick="purchUpgrade('replicator5', 'replicatorV')" class="availableUp , unavailable" src="images/replicatorUpV.png" />
+              <img id="planetI" onclick="purchUpgrade('planet1', 'planetI')" class="availableUp , unavailable" src="images/planetUpI.png" />
+              <img id="planetII" onclick="purchUpgrade('planet2', 'planetII')" class="availableUp , unavailable" src="images/planetUpII.png" />
+              <img id="planetIII" onclick="purchUpgrade('planet3', 'planetIII')" class="availableUp , unavailable" src="images/planetUpIII.png" />
+              <img id="planetIV" onclick="purchUpgrade('planet4', 'planetIV')" class="availableUp , unavailable" src="images/planetUpIV.png" />
+              <img id="planetV" onclick="purchUpgrade('planet5', 'planetV')" class="availableUp , unavailable" src="images/planetUpV.png" />
+              <img id="transmutatorI" onclick="purchUpgrade('transmutator1', 'transmutatorI')" class="availableUp , unavailable" src="images/transmutatorUpI.png" />
+              <img id="transmutatorII" onclick="purchUpgrade('transmutator2', 'transmutatorII')" class="availableUp , unavailable" src="images/transmutatorUpII.png" />
+              <img id="transmutatorIII" onclick="purchUpgrade('transmutator3', 'transmutatorIII')" class="availableUp , unavailable" src="images/transmutatorUpIII.png" />
+              <img id="transmutatorIV" onclick="purchUpgrade('transmutator4', 'transmutatorIV')" class="availableUp , unavailable" src="images/transmutatorUpIV.png" />
+              <img id="transmutatorV" onclick="purchUpgrade('transmutator5', 'transmutatorV')" class="availableUp , unavailable" src="images/transmutatorUpV.png" />
+              <img id="carrot" onclick="purchUpgrade('carrot', 'carrot')" class="availableUp , unavailable" src="images/carrot.png" />
+              <img id="potato01" onclick="purchUpgrade('potato01', 'potato01')" class="availableUp , unavailable" src="images/potato.png" />
+              <img id="turnip" onclick="purchUpgrade('turnip', 'turnip')" class="availableUp , unavailable" src="images/turnip.png" />
+              <img id="onion" onclick="purchUpgrade('onion', 'onion')" class="availableUp , unavailable" src="images/redonion.png" />
+              <img id="pea" onclick="purchUpgrade('pea', 'pea')" class="availableUp , unavailable" src="images/pea.png" />
+              <img id="soybean" onclick="purchUpgrade('soybean', 'soybean')" class="availableUp , unavailable" src="images/soybean.png" />
+              <img id="tomato01" onclick="purchUpgrade('tomato01', 'tomato01')" class="availableUp , unavailable" src="images/alicantetomato.png" />
+              <img id="tomato02" onclick="purchUpgrade('tomato02', 'tomato02')" class="availableUp , unavailable" src="images/romatomato.png" />
+              <img id="lettuce" onclick="purchUpgrade('lettuce', 'lettuce')" class="availableUp , unavailable" src="images/iceberglettuce.png" />
+              <img id="wheat01" onclick="purchUpgrade('wheat01', 'wheat01')" class="availableUp , unavailable" src="images/breadwheat.png" />
+              <img id="wheat02" onclick="purchUpgrade('wheat02', 'wheat02')" class="availableUp , unavailable" src="images/durumwheat.png" />
+              <img id="millet" onclick="purchUpgrade('millet', 'millet')" class="availableUp , unavailable" src="images/pearlmillet.png" />
+              <img id="cucumber" onclick="purchUpgrade('cucumber', 'cucumber')" class="availableUp , unavailable" src="images/cucumber.png" />
+              <img id="tomato03" onclick="purchUpgrade('tomato03', 'tomato03')" class="availableUp , unavailable" src="images/jubileetomato.png" />
+              <img id="pepper" onclick="purchUpgrade('pepper', 'pepper')" class="availableUp , unavailable" src="images/bellpepper.png" />
+              <img id="eggplant" onclick="purchUpgrade('eggplant', 'eggplant')" class="availableUp , unavailable" src="images/eggplant.png" />
+              <img id="sugarcane" onclick="purchUpgrade('sugarcane', 'sugarcane')" class="availableUp , unavailable" src="images/sugarcane.png" />
+              <img id="corn" onclick="purchUpgrade('corn', 'corn')" class="availableUp , unavailable" src="images/sweetcorn.png" />
+              <img id="garlic" onclick="purchUpgrade('garlic', 'garlic')" class="availableUp , unavailable" src="images/garlic.png" />
+              <img id="beet" onclick="purchUpgrade('beet', 'beet')" class="availableUp , unavailable" src="images/beet.png" />
+              <img id="potato02" onclick="purchUpgrade('potato02', 'potato02')" class="availableUp , unavailable" src="images/sweetpotato.png" />
+              <img id="rice" onclick="purchUpgrade('rice', 'rice')" class="availableUp , unavailable" src="images/rice.png" />
+              <img id="sunflower" onclick="purchUpgrade('sunflower', 'sunflower')" class="availableUp , unavailable" src="images/sunflower.png" />
+              <img id="cassava" onclick="purchUpgrade('cassava', 'cassava')" class="availableUp , unavailable" src="images/cassava.png" />
+              <img id="pumpkin" onclick="purchUpgrade('pumpkin', 'pumpkin')" class="availableUp , unavailable" src="images/pumpkin.png" />
+            </div>
+            </div>
+          </div>
+          <div class="purchasedborder"></div>
+          <div class="purchased">
+            
+            <div  class="purchTitle"><p>Purchased <span class="small"><span id="totalUpgrades1"></span>/86</span></p></div>
+            <div id="purchased"></div>
+          </div>
+        </div>
+        <div id="Achievements" class="menucontent">
+          <div class="achievementsborder"></div>
+          <div class="achievementstab">
+            <div class="purchTitle"><p>Unlocked <span class="small"><span id="totalAchieve"></span>/60</span></p></div>
+          <div id="achievementHold">
+          <img id="achievement01" class="achievements" src="images/locked.png" />
+          <img id="achievement02" class="achievements" src="images/locked.png" />
+          <img id="achievement03" class="achievements" src="images/locked.png" />
+          <img id="achievement04" class="achievements" src="images/locked.png" />
+          <img id="achievement05" class="achievements" src="images/locked.png" />
+          <img id="achievement06" class="achievements" src="images/locked.png" />
+          <img id="achievement07" class="achievements" src="images/locked.png" />
+          <img id="achievement08" class="achievements" src="images/locked.png" />
+          <img id="achievement09" class="achievements" src="images/locked.png" />
+          <img id="achievement10" class="achievements" src="images/locked.png" />
+          <img id="achievement11" class="achievements" src="images/locked.png" />
+          <img id="achievement12" class="achievements" src="images/locked.png" />
+          <img id="achievement13" class="achievements" src="images/locked.png" />
+          <img id="achievement14" class="achievements" src="images/locked.png" />
+          <img id="achievement15" class="achievements" src="images/locked.png" />
+          <img id="achievement16" class="achievements" src="images/locked.png" />
+          <img id="achievement17" class="achievements" src="images/locked.png" />
+          <img id="achievement18" class="achievements" src="images/locked.png" />
+          <img id="achievement19" class="achievements" src="images/locked.png" />
+          <img id="achievement20" class="achievements" src="images/locked.png" />
+          <img id="achievement21" class="achievements" src="images/locked.png" />
+          <img id="achievement22" class="achievements" src="images/locked.png" />
+          <img id="achievement23" class="achievements" src="images/locked.png" />
+          <img id="achievement24" class="achievements" src="images/locked.png" />
+          <img id="achievement25" class="achievements" src="images/locked.png" />
+          <img id="achievement26" class="achievements" src="images/locked.png" />
+          <img id="achievement27" class="achievements" src="images/locked.png" />
+          <img id="achievement28" class="achievements" src="images/locked.png" />
+          <img id="achievement29" class="achievements" src="images/locked.png" />
+          <img id="achievement30" class="achievements" src="images/locked.png" />
+          <img id="achievement31" class="achievements" src="images/locked.png" />
+          <img id="achievement32" class="achievements" src="images/locked.png" />
+          <img id="achievement33" class="achievements" src="images/locked.png" />
+          <img id="achievement34" class="achievements" src="images/locked.png" />
+          <img id="achievement35" class="achievements" src="images/locked.png" />
+          <img id="achievement36" class="achievements" src="images/locked.png" />
+          <img id="achievement37" class="achievements" src="images/locked.png" />
+          <img id="achievement38" class="achievements" src="images/locked.png" />
+          <img id="achievement39" class="achievements" src="images/locked.png" />
+          <img id="achievement40" class="achievements" src="images/locked.png" />
+          <img id="achievement41" class="achievements" src="images/locked.png" />
+          <img id="achievement42" class="achievements" src="images/locked.png" />
+          <img id="achievement43" class="achievements" src="images/locked.png" />
+          <img id="achievement44" class="achievements" src="images/locked.png" />
+          <img id="achievement45" class="achievements" src="images/locked.png" />
+          <img id="achievement46" class="achievements" src="images/locked.png" />
+          <img id="achievement47" class="achievements" src="images/locked.png" />
+          <img id="achievement48" class="achievements" src="images/locked.png" />
+          <img id="achievement49" class="achievements" src="images/locked.png" />
+          <img id="achievement50" class="achievements" src="images/locked.png" />
+          <img id="achievement51" class="achievements" src="images/locked.png" />
+          <img id="achievement52" class="achievements" src="images/locked.png" />
+          <img id="achievement53" class="achievements" src="images/locked.png" />
+          <img id="achievement54" class="achievements" src="images/locked.png" />
+          <img id="achievement55" class="achievements" src="images/locked.png" />
+          <img id="achievement56" class="achievements" src="images/locked.png" />
+          <img id="achievement57" class="achievements" src="images/locked.png" />
+          <img id="achievement58" class="achievements" src="images/locked.png" />
+          <img id="achievement59" class="achievements" src="images/locked.png" />
+          <img id="achievement60" class="achievements" src="images/locked.png" />
+          <img id="achievement61" class="achievements" src="images/locked.png" />
+          <img id="achievement62" class="achievements" src="images/locked.png" />
+          <img id="achievement63" class="achievements" src="images/locked.png" />
+          <img id="achievement64" class="achievements" src="images/locked.png" />
+          </div>
+          </div>
+        </div>
+        <div id="Stats" class="menucontent , stats">
+          <div class="statsborder"></div>
+          <div class="statsHold">
+          <p>Started farming on: <span id="startDate"></span> <span class="grey">(MM-DD-YYYY)</span></p>
+          <p>Lifetime clicks: <span id="lifetimeclicks"></span></p>
+          <p>Clicking power: <span id="clickingPower"></span></p>
+          <p>Crops harvested by hand: <span id="cropsByHand"></span></p>
+          <p>Base crops per second: <span id="baseCps"></span></p>
+          <p>Total cps multiplier: <span id="bonusMultiplier"></span>%</p>
+          <p>Total crops harvested: <span id="totalcropharvest"></span></p>
+          <p>Buildings owned: <span id="totalbuildings"></span></p>
+          <p>Upgrades purchased: <span id="totalUpgrades2"></span></p>
+          </div>
+        </div>
+        <div id="Settings" class="menucontent , settings">
+          <div class="availableborder"></div>
+          <button id="nightMode" type="button" value="off">Night Mode | OFF</button><br />
+          <button id="sounds" type="button" value="on">Audio | ON</button><br>
+          <button onclick="deleteSave()" type="button">Delete Save File!</button>
+        </div>
+        <div id="News" class="menucontent , news">
+          <div class="newsborder"></div>
+          <div class="version">
+            <h3>Spring Cleaning - <span>Apr 7th 2022</span></h3>
+            <h5>Version 0.4.2</h5>
+            <ul>
+              <li>Sound effect volume has been lowered.</li><br>
+              <li>Top bar and building menu changed to stand out from the background</li><br>
+              <li>Building descriptions now behave like other description boxes</li><br>
+              <li>Fixed fonts for achievement descriptions.</li><br>
+              <li>Saved game, insufficient crops, and already purchased notifications have changed appearance to be more noticeable</li><br>
+            </ul>
+          </div>
+          <hr />
+          <div class="version">
+            <h3>Percent Profits <span>(Part 2)</span> - <span>Feb 18th 2022</span></h3>
+            <h5>Version 0.4.1</h5>
+            <ul>
+              <li>Added 4 new achievements to collect!</li><br>
+              <li>Night mode background now looks more like night.</li><br>
+              <li>Added a bean icon next to costs for upgrades.</li><br>
+              <li>Upgrades are now darkened if you don't have enough crops to purchase it.</li><br>
+              <li>Upgrade description boxes now pop up near the mouse, similar to achievement descriptions.</li><br>
+              <li>Fixed graphical glitches with background not being centered on different sized monitors. (still testing for mobile screens)</li><br>
+              <li>Tab icon in browsers is now a bean!</li><br>
+              <li>Cleaned up js and html.</li>
+            </ul>
+          </div>
+          <hr />
+          <div class="version">
+            <h3>Percent Profits <span>(Part 1)</span> - <span>Feb 15th 2022</span></h3>
+            <h5>Version 0.4</h5>
+            <ul>
+              <li>Increase your harvests with 25 new upgrades to purchase!</li><br>
+              <li>Added sound effect when clicking the bean!</li><br>
+              <li>Settings page has a button to mute/unmute audio</li><br>
+              <li>'Base cps' and 'Cps multiplier' info added to Stats page</li><br>
+              <li>Added a farm starting date to the Stats page</li><br>
+              <li>Modified how costs look in upgrade descriptions to be more readable (1,000,000 is now 1 million)</li><br>
+              <li>Changed how left menu buttons are displayed to make room for more tabs in the future</li><br>
+              <li>Modified some sprites including upgrades for planets, bunkers, replicators, transmutators and a few achievements</li><br>
+              <li>Fixed a bug where 'Upgrades purchased' in Stats page would not be displayed</li>
+            </ul>
+          </div>
+          <hr />
+          <div class="version">
+            <h3>Achievement Hunter - <span>Jan 22nd 2022</span></h3>
+            <h5>Version 0.3</h5>
+            <ul>
+              <li>Updated achievements tab and added *60* achievements to the game!</li><br>
+              <li>Upgrade counter added to purchased tab and Stats page</li><br>
+              <li>Fixed purchased tab border for different sized screens</li><br>
+              <li>Made clicking upgrade tier 1 and 2 icons slightly smaller</li><br>
+              <li>Moved version number to the top bar and added social media links</li>
+            </ul>
+          </div>
+          <hr />
+          <div id="version0.2" class="version">
+            <h3>Clicking Power! - <span>Dec 17th 2021</span></h3>
+            <h5>Version 0.2</h5>
+            <ul>
+              <li>Added five upgrades for clicking</li><br>
+              <li>'Crops made by hand' and 'Clicking power' info added to Stats page</li><br>
+              <li>Night mode added</li>
+            </ul>
+          </div>
+          <hr />
+          <div id="version0.1" class="version">
+            <h3>"Initial Realease" - <span>Dec 13th 2021</span></h3>
+            <h5>Version 0.1</h5>
+            <ul>
+              <li>First public release</li><br>
+              <li>Inspired by a game you've probably heard of</li><br>
+              <li>Also my first coding project</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="center" class="center">
+        
+        <p id="score"></p>
+        <p id="cps"></p>
+        <div id="bigcrop" class="relative">
+          <button class="bean"  type="button">
+            <img onclick="cropclick()" class="beanimg" src="images/bean.png" />
+          </button>
+        </div>
+        <div id="notifBar" class="notifbar"></div>
+      </div>
+      <div id="rightbar" class="rightbar">
+        <div class="buildingborder"></div>
+        <div class="rightbar1">
+          <div id="helphandbtn">
+          <button id="helphand" class="helphand" onclick="buyBuilding('hand')" type="button">
+            <img class="helphandimg" src="images/helpinghand.png" />
+            <div class="helphandtitle">
+              <h3 class="buildingTitleH3">Helping Hand</h3>
+              <h5 class="buildingTitleCost">Cost:
+                <p id="helpHandCost"></p>
+              </h5>
+              <h1 id="countHelpHand"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="farmerjoebtn">
+          <button id="farmerjoe" class="farmerjoe , buildingLocked" onclick="buyBuilding('joe')" type="button">
+            <img class="farmerjoeimg" src="images/farmerjoe.png" />
+            <div class="farmerjoetitle">
+              <h3 class="buildingTitleH3">Farmer Joe</h3>
+              <h5 class="buildingTitleCost">Cost:
+                <p id="farmerJoeCost"></p>
+              </h5>
+              <h1 id="countFarmerJoe"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="fieldbtn">
+          <button id="field" class="field , buildingLocked" onclick="buyBuilding('field')" type="button">
+            <img class="fieldimg" src="images/field.png" />
+            <div class="fieldtitle">
+              <h3 class="buildingTitleH3">Magic Field</h3>
+              <h5 class="buildingTitleCost">Cost:
+                <p id="fieldCost"></p>
+              </h5>
+              <h1 id="countField"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="harvesterbtn">
+          <button id="harvester" class="harvester , buildingLocked" onclick="buyBuilding('harvester')" type="button">
+            <img class="harvesterimg" src="images/harvester.png" />
+            <div class="harvestertitle">
+              <h3 class="buildingTitleH3">Combine</h3>
+              <h5 class="buildingTitleCost">Cost:
+                <p id="harvesterCost"></p>
+              </h5>
+              <h1 id="countHarvester"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="greenhousebtn">
+          <button id="greenhouse" class="greenhouse , buildingLocked" onclick="buyBuilding('greenhouse')" type="button">
+            <img class="greenhouseimg" src="images/greenhouse.png" />
+            <div class="greenhousetitle">
+              <h3 class="buildingTitleH3">Greenhouse</h3>
+              <h5 class="buildingTitleCost">Cost:
+                <p id="greenhouseCost"></p>
+              </h5>
+              <h1 id="countGreenhouse"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="skyscraperbtn">
+          <button id="skyscraper" class="skyscraper , buildingLocked" onclick="buyBuilding('skyscraper')" type="button">
+            <img class="skyscraperimg" src="images/skyscraper.png" />
+            <div class="skyscrapertitle">
+              <h3 class="buildingTitleH3">Skyscraper</h3>
+              <h5 class="buildingTitleCost">Cost:
+                <p id="skyscraperCost"></p>
+              </h5>
+              <h1 id="countSkyscraper"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="bunkerbtn">
+          <button id="bunker" class="bunker , buildingLocked" onclick="buyBuilding('bunker')" type="button">
+           <img class="bunkerimg" src="images/bunker.png" />
+            <div class="bunkertitle">
+              <h3 class="buildingTitleH3">Bunker</h3>
+              <h5 class="buildingTitleCost">Cost:
+                <p id="bunkerCost"></p>
+              </h5>
+              <h1 id="countBunker"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="replicatorbtn">
+          <button id="replicator" class="replicator , buildingLocked" onclick="buyBuilding('replicator')" type="button">
+            <img class="replicatorimg" src="images/replicator.png" />
+            <div class="replicatortitle">
+              <h3 class="buildingTitleH3">Replicator</h3>
+              <h5 class="buildingTitleCost">Cost: 
+                <p id="replicatorCost"></p>
+              </h5>
+              <h1 id="countReplicator"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="planetbtn">
+          <button id="planet" class="planet , buildingLocked" onclick="buyBuilding('planet')" type="button">
+            <img class="planetimg" src="images/planet.png" />
+            <div class="planettitle">
+              <h3 class="buildingTitleH3">Planet</h3>
+              <h5 class="buildingTitleCost">Cost: 
+                <p id="planetCost"></p>
+              </h5>
+              <h1 id="countPlanet"></h1>
+            </div>
+          </button>
+        </div>
+        <div id="transmutatorbtn">
+          <button id="transmutator" class="transmutator , buildingLocked" onclick="buyBuilding('transmutator')" type="button">
+            <img class="transmutatorimg" src="images/transmutator.png" />
+            <div class="transmutatortitle">
+              <h3 class="buildingTitleH3">Transmutator</h3>
+              <h5 class="buildingTitleCost">Cost: 
+                <p id="transmutatorCost"></p>
+              </h5>
+              <h1 id="countTransmutator"></h1>
+            </div>
+          </button>
+        </div>
+        </div>
+        
+      </div>
+      <div>
+        <img id="leftmenuarrow" src="images/arrowleft.png" onclick="leftmenu()" />
+      </div>
+      <div>
+        <img id="rightmenuarrow" src="images/arrowright.png" onclick="rightmenu()" />
+      </div>
+    </div> 
+        <script src="mechanics.js"></script>
+  </body>
+</html> <!--1372 lines  64kb-->
